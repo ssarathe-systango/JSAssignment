@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="CSS/layout.css">
+
+    <!-- JavaScript Code-->
+    <script>
+
+        function updateTextbox(value) {
+            document.getElementById("screen").value += value;
+        }
+
+        function result() {
+            document.getElementById("screen").value = eval(document.getElementById("screen").value);
+        }
+
+        function reset() {
+            document.getElementById("screen").value = '';
+        }
+
+        function back() {
+            var value = document.getElementById("screen").value;
+            document.getElementById("screen").value = value.substr(0, value.length - 1);
+        }
+
+    </script>
+</head>
+
+<h1><u>Calculator</u></h1>
+<div class="container">
+    <div class="header">Calculator</div>
+    <input type="text" class="result" id="screen" name="screen">
+    <div class="first-row">
+        <input type="button" name="&radic;" value="&radic;" class="global" onclick="updateTextbox('&radic;')">
+        <input type="button" name="(" value="(" class="global" onclick="updateTextbox('(')">
+        <input type="button" name=")" value=")" class="global" onclick="updateTextbox(')')">
+        <input type="button" name="%" value="%" class="global" onclick="updateTextbox('%')">
+    </div>
+    <div class="second-row">
+        <input type="button" name="7" value="7" class="global" onclick="updateTextbox(7)">
+        <input type="button" name="8" value="8" class="global" onclick="updateTextbox(8)">
+        <input type="button" name="9" value="9" class="global" onclick="updateTextbox(9)">
+        <input type="button" name="/" value="/" class="global" onclick="updateTextbox('/')">
+    </div>
+    <div class="third-row">
+        <input type="button" name="4" value="4" class="global" onclick="updateTextbox(4)">
+        <input type="button" name="5" value="5" class="global" onclick="updateTextbox(5)">
+        <input type="button" name="6" value="6" class="global" onclick="updateTextbox(6)">
+        <input type="button" name="*" value="*" class="global" onclick="updateTextbox('*')">
+    </div>
+    <div class="fourth-row">
+        <input type="button" name="1" value="1" class="global" onclick="updateTextbox(1)">
+        <input type="button" name="2" value="2" class="global" onclick="updateTextbox(2)">
+        <input type="button" name="3" value="3" class="global" onclick="updateTextbox(3)">
+        <input type="button" name="-" value="-" class="global" onclick="updateTextbox('-')">
+    </div>
+    <div class="conflict">
+        <div class="left">
+            <input type="button" name="0" value="0" class="big" onclick="updateTextbox(0)">
+            <input type="button" name="." value="." class=" small" onclick="updateTextbox('.')">
+            <input type="button" name="Del" value="Del" class="green small white-text top-margin" onclick="reset()">
+            <input type="button" name="=" value="=" class="coral white-text big top-margin" onclick="result();">
+        </div>
+        <div class="right">
+            <input type="button" name="+" value="+" class="global grey plus" onclick="updateTextbox('+')">
+            <input type="button" name="back" value="Clr" class="Backspace" onclick="back()">
+        </div>
+    </div>
+</div>
+
+</html>
